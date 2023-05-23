@@ -43,16 +43,6 @@
     2. clear a bit in a register?
     3. mask a bit in a register?
 
-## To Add
-
-- git repo
-- terminal use
-- add to path (?)
-- write testable code for unit tests
-  - testSetBit()
-  - testClearBit()
-  - testMaskBit()
-
 ## Lab - Hello World
 
 ### Installation
@@ -69,8 +59,8 @@
    5. Once installed, VS Code may need to reboot. \
 ![platformio install pic not found](pics/platformio-install.png)
 4. Install `STM 32 Platform`
-   1. Launch _Platformio IDE_ by selecting the new icon on the left-hand sidebar.
-   2. Click on the little _house icon (PlatformIO Home)_ on the left side of the strip at the bottom of the window. This will work as long as PlatformIO has been launched
+   1. Launch _Platformio IDE_ by selecting the new icon on the left-hand sidebar
+   2. Click on the little _house icon (PlatformIO Home)_ on the left side of the strip at the bottom of the window _(This will work as long as PlatformIO has been launched)_
    3. Select the Platforms tab in the PIO window
    4. Search for STM32
    5. Select Install \
@@ -90,6 +80,8 @@
       1. Name: \<UID\>-hello-world (grades will be assigned based on the UID)
       2. Board: The Board number
       3. Framework: STM32 Cube (You will fail if you use the Arduino Framework)
+
+_For additional linting help in the c code, install **Miscosoft C/C++** extension and follow one of the tutorials under **C/C++ extension tutorials per compiler and platform** (I used [GCC and Mingw-w64 on Windows](https://code.visualstudio.com/docs/cpp/config-mingw))_
 
 ### Platformio IDE
 
