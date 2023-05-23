@@ -151,19 +151,35 @@ Another _very important_ tutorial (though there might be better ones out there),
 ### Bit Manipulation
 
 1. Complete the functions called by the following unit tests:
-    1. `testSetBit()`
-       1. `setBit(uint32_t* bits, bitNum)` $range_{bitNum} = [0,31]$
-    2. `testClearBit()`
-       1. `setBit(uint32_t* bits, bitNum)` $range_{bitNum} = [0,31]$
-    3. `testMaskBit()`
-       1. `bool maskBit(uint32_t bits, bitNum)`
+    1. `void testSetBit()`
+       1. `Err setBit(uint32_t* bits, uint8_t n)` $range_{bitNum} = [0,31]$
+    2. `void testClearBit()`
+       1. `Err setBit(uint32_t* bits, uint8_t n)` $range_{bitNum} = [0,31]$
+    3. `void testMaskBit()`
+       1. `Err maskBit(uint8_t* masked_bit, uint32_t data, uint8_t n)`
 
 _Make sure to commit after each test passes!_
 
 ### Unit Testing
 
-1. Read the function descriptions found in `functions-to-test.c` and write unit tests verifying each one works as described. _(Hint: one should fail)_
-2. Return nonzero for failed tests
+Unit testing is fundamental to software development, and will be one of your most useful tools when verifying that your code works; it's also how you'll be graded--in short, this is a big deal.
+
+1. Install the **Native** platform to facilitate unit testing on your machine
+   1. Open Platforms (Platformio Home $\rightarrow$ Platforms $\rightarrow$ Desktop)
+   2. Click on the **Desktop** tab
+   3. Search _"Native"_
+2. Set up a testing environment
+   1. Open `platformio.ini`
+   2. Add the following code to create a native testing environment \
+
+   ```ini
+   [env:unit-test]
+   platform = native
+   ```
+
+3. Run the unit tests
+   1. In the terminal, enter `platformio test -e unit-test`
+4. Read the function descriptions found in `functions-to-test.c` and write unit tests verifying each one works as described _(Hint: one should fail)_
 
 _Make sure to commit after completing each test!_
 

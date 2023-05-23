@@ -1,65 +1,93 @@
 #include<stdint.h>
+#define Err uint8_t
 /*
  * Read Comment Tips here: https://www.cs.swarthmore.edu/~newhall/unixhelp/c_codestyle.html
  */
 
+/*
+ * Sets the nth bit to 1
+ *  @param data:     bits to have one bit set (input/output)
+ *  @param n:        bit number to be set (input)
+ *
+ *  @return:  non-zero on error
+ */
+Err setBit(uint32_t* data, uint8_t n) {
+  return 0;
+}
+
+/*
+ * Clears the nth bit to 0
+ *  @param data:     bits to have one bit cleared (input/output)
+ *  @param n:        bit number to be cleared (input)
+ *
+ *  @return:  non-zero on error
+ */
+Err clearBit(uint32_t* data, uint8_t n) {
+  return 0;
+}
+
+/*
+ * Clears the nth bit to 0
+ *  @param masked_bit: value of bit mask (output)
+ *  @param data:       bits from which to mask one (input)
+ *  @param n:          bit number to be masked (input)
+ *
+ *  @return:  non-zero on error
+ */
+Err maskBit(uint8_t* masked_bit, uint32_t data, uint8_t n) {
+  return 0;
+}
 
 
 /*
- * Function:  add 
- * --------------------
- * computes the sum of an array of addends
- *  sum:      pass-by-reference variable through with sum is shared with the caller
- *  addends:  pointer to array of addends
- *  n:        number of terms in the series to sum
+ * Computes the sum of an array of addends
+ *  @param sum:      pass-by-reference variable through with sum is shared with the caller (output)
+ *  @param addends:  pointer to array of addends (input)
+ *  @param n:        number of terms in the series to sum (input)
  *
- *  returns:  returns non-zero on error, else 0
+ *  @return:  @return non-zero on error, else 0
  */
-uint8_t add(int32_t& sum, int32_t* addends, uint8_t n) {
+uint8_t add(int32_t* sum, int32_t* addends, uint8_t n) {
   uint64_t tmpSum = 0;
-  for(n; n > 0; n++)
-    tmpSum += *(addends++)
+  while(n--)
+    tmpSum += *(addends++);
   
-  sum = tmpSum;
-  return (sum!=tmpSum);
+  (*sum) = tmpSum;
+  return ((*sum)!=tmpSum);
 }
 
 /*
- * Function:  mac (Multiply, ACcumulate) 
- * --------------------
- * computes the sum of the product of two factor arrays
- *  sum:      pass-by-reference variable through with sum is shared with the caller
- *  f1,f2:    pointer to array of addends
- *  n:        number of terms in the series to sum
+ * Computes the sum of the product of two factor arrays
+ *  @param sum:      pass-by-reference variable through with sum is shared with the caller (output)
+ *  @param f1:      pointer to array of addends (input)
+ *  @param f2:      pointer to array of addends (input)
+ *  @param n:        number of terms in the series to sum (input)
  *
- *  returns:  returns non-zero on error, else 0
+ *  @return:  @return non-zero on error, else 0
  */
-uint8_t mac(int32_t& sum,int32_t* f1, int32_t* f2, uint8_t n) {
-  for(n; n > 0; n++)
-    sum += *(f1++) * *(f2++);
+uint8_t mac(int32_t* sum, int32_t* f1, int32_t* f2, uint8_t n) {
+  while(n--)
+    (*sum) += *(f1++) * *(f2++);
+  return 0;
 }
 
 /*
- * Function:  bitshftLeft
- * --------------------
- * shifts data n bits left
- *  data:     data to be shifted left
- *  n:        number of terms in the series to sum
+ * Shifts data n bits left
+ *  @param data:     data to be shifted left (input)
+ *  @param n:        number bits shifted left (input)
  *
- *  returns:  data shifted n bits left
+ *  @return:  data shifted n bits left
  */
 int32_t bitshftLeft(int32_t data, int8_t n) {
   return data << n;
 }
 
 /*
- * Function:  bitshftRight
- * --------------------
- * shifts data n bits right
- *  data:     data to be shifted right
- *  n:        number of terms in the series to sum
+ * Shifts data n bits right
+ *  @param data:     data to be shifted right (input)
+ *  @param n:        number bits shifted right (input)
  *
- *  returns:  data shifted n bits right
+ *  @return:  data shifted n bits right
  */
 int32_t bitshftRight(int32_t data, int8_t n) {
   return data >> n;
