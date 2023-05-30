@@ -102,7 +102,10 @@ _I believe the entire prelab should be in an automatically-graded quiz._
 
 ### Platformio IDE
 
-1. Copy the project from: _**Path to Project here!!!**_ to a usable location on your computer. Prefix the project with your UID as follows: `u0000000-bare-metal` where `u0000000` is your UID.
+1. Copy and open the PlatformIO project
+   1. Copy the project from: _**Path to Project here!!!**_ to a usable location on your computer. Prefix the project with your UID as follows: `u0000000-bare-metal` where `u0000000` is your UID
+   2. Click on the PlatformIO icon on the left-hand sidebar to initialize PlatformIO core
+   3. Select "Pick a folder", and select the project copied to your machine
 2. Compile the code & upload the binaries to the microcontroller
    1. Connect the microcontroller to the computer using a mini-USB to USB-A cable
    2. Click the check mark on the right side of the banner towards the top of the window \
