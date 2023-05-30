@@ -4,24 +4,26 @@
 
 1. Install & use:
    1. VS Code
-   2. Platformio
-      1. GUI
-      2. CLI
-   3. Git
-      1. GUI
-      2. CLI
+      1. Platformio GUI/CLI
+         1. Build a Project
+         2. Run tests with PlatformIO
+   2. Git GUI/CLI
+      1. Commit the project
 2. Bare Metal Programming
-   1. Program STM32 Board
-   2. Change blink speed
+   1. Flash a binary onto the microcontroller
+   2. Make a code change
 3. Software Practices
-   1. Write code to be tested
-   2. Write unit tests for code
-4. Read the reference manuals for basic information
+   1. Write functions to be tested
+      1. 
+   2. Write unit tests for pre-defined functions
+      1. 
+4. Find basic microcontroler information in Reference Manuals
 
 ## Materials
 
 - STM-Nucleo-F446RE
 - USB-A to Mini-USB connector
+- Computer (Windows, Mac, Debian-based [other Linux distros will likely work as well])
 
 ## Prelab
 
@@ -59,53 +61,40 @@
    5. Once installed, VS Code may need to reboot. \
 ![platformio install pic not found](pics/platformio-install.png)
 4. Install `STM 32 Platform`
-   1. Launch _Platformio IDE_ by selecting the new icon on the left-hand sidebar
-   2. Click on the little _house icon (PlatformIO Home)_ on the left side of the strip at the bottom of the window _(This will work as long as PlatformIO has been launched)_
-   3. Select the Platforms tab in the PIO window
-   4. Search for STM32
-   5. Select Install \
+   1. Launch _(1) Platformio IDE_ by selecting the new icon on the left-hand sidebar
+   2. Click on the little _(2) house icon (PlatformIO Home)_ on the left side of the strip at the bottom of the window _(This will work as long as PlatformIO has been launched)_
+   3. Select the _(3) Platforms_ tab in the PIO window
+   4. _(4) Search_ for STM32
+   5. Select _(5) Install_ \
    ![Platformio Home image missing](pics/platformio-platforms.png)
-5. Open Example Project
-   1. Navigate to PlatformIO Home by clicking on the _house icon_ in the upper icon of the left-hand sidebar in the PlatformIO Home window
-   2. Select _Project Examples_
-      1. Open `stm32cube-hal-blink` \
-      ![open example project image missing](pics/open-example-project.png)
-6. Open a new PlatformIO Project:
+5. Open a new PlatformIO Project:
    1. Create a new VS Code window (Leave the Example Project open; we'll be using that)
       1. Select, File $\rightarrow$ New Window (Ctrl + Shft + N)
    2. Open the Platformio Home Page again:
       1. Launch Platformio by clicking on the icon on the left-hand sidebar
       2. Open the PlatformIO home page by clicking on the house button on the left side of the banner at the bottom of the window.
    3. Select "+ New Project" under the **Quick Access** section (above the Project Examples option) and enter the following information into the **Project Wizard:**
-      1. Name: \<UID\>-hello-world (grades will be assigned based on the UID)
-      2. Board: The Board number
-      3. Framework: STM32 Cube (You will fail if you use the Arduino Framework)
+      1. Name: \<UID\>-hello-world _(grades will be assigned based on the UID)_
+      2. Board: STM Nucleo F446RE
+      3. Framework: STM32 Cube _(You will fail if you use the Arduino Framework)_
 
 _For additional linting help in the c code, install **Miscosoft C/C++** extension and follow one of the tutorials under **C/C++ extension tutorials per compiler and platform** (I used [GCC and Mingw-w64 on Windows](https://code.visualstudio.com/docs/cpp/config-mingw))_
 
 ### Platformio IDE
 
-1. Copy the `main.c` file from the example project to your new project (`\<UID\>-hello-world`)
-   1. Copy the `main.c` file from HAL-Blink (the example project)
-      1. Open the Explorer Tab on the left-hand sidebar to explore the Example Project's files
-      2. select `src/main.c`
-      3. Copy the file contents
-   2. Paste the file into (`\<UID\>-hello-world/src/main.c`)
-2. Include only the necessary HAL file
-   1. Remove the `#if/elif F*` lines at the beginning of the file
-   2. Choose the `STM32**xx_hal.h` that corresponds to the board number (I'm using the Nucleo-F446RE, so I'm keeping only the STM32F4xx_hal.h file); remove the others
-3. Compile & upload the code to the board
-   1. Connect the board to the computer
+1. Copy the `main.c` file from `code/main.c` in this repo to your new project (`\<UID\>-hello-world/src/main.c`)
+2. Compile the code & upload the binaries to the microcontroller
+   1. Connect the microcontroller to the computer
    2. Click the check mark on the right side of the banner towards the top of the window \
    _(The carat allows the additional options of: `build`, `test`,`upload`, and `clean`)_
    3. You'll notice a terminal appear. If you do not see [SUCCESS], then there is a problem with your implementation
    4. Scroll to the top of the terminal output; you'll see a command as follows; it's important: \
    `<prompt> > <path>/platformio.exe run --target upload`
-4. Add platformio path (`<path>` from the previous prompt [`<prompt> > <path>/platformio.exe run --target upload`]) to system path
+3. Add platformio path (`<path>` from the previous prompt [`<prompt> > <path>/platformio.exe run --target upload`]) to system path
     1. [Windows - Add to path](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
     2. [Linux - Add to path](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/)
     3. [Mac - Add to path](https://osxdaily.com/2014/08/14/add-new-path-to-path-command-line/)
-5. Open the terminal at the root of the project and explore PlatformIO's CLI (Command-Line Interface):
+4. Open the terminal at the root of the project and explore PlatformIO's CLI (Command-Line Interface):
     1. Upload the compiled output of your code from the command line: \
       `platformio run --target upload`
     2. Explore the help information with the `-h` option (i.e. `platformio -h`)
