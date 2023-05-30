@@ -155,18 +155,6 @@ Read the following articles on Git commit messages (there _will_ be a quiz on th
 - [11 tips for writing a good Git commit message](https://opensource.com/article/22/12/git-commit-message)
 - [GitKraken.com - Writing a Good Git Commit Message](https://www.gitkraken.com/learn/git/best-practices/git-commit-message)
 
-### Bit Manipulation
-
-1. Complete the functions called by the following unit tests:
-    1. `void testSetBit()`
-       1. `Err setBit(uint32_t* bits, uint8_t n)` $range_{bitNum} = [0,31]$
-    2. `void testClearBit()`
-       1. `Err setBit(uint32_t* bits, uint8_t n)` $range_{bitNum} = [0,31]$
-    3. `void testMaskBit()`
-       1. `Err maskBit(uint8_t* masked_bit, uint32_t data, uint8_t n)`
-
-_Make sure to commit after each test passes!_
-
 ### Unit Testing
 
 Unit testing is fundamental to software development, and will be one of your most useful tools when verifying that your code works; it's also how you'll be graded--in short, this is a big deal.
@@ -190,9 +178,22 @@ Unit testing is fundamental to software development, and will be one of your mos
 
 _Make sure to commit after completing each test!_
 
+### Bit Manipulation
+
+1. Complete the functions called by the following unit tests:
+    1. `void testSetBit()`
+       1. `Err setBit(uint32_t* bits, uint8_t n)` $range_{bitNum} = [0,31]$ \
+       _One design pattern we will use in this course is to return Error codes, rather than a typical result of the operations of the function. For that reason, the first argument of the function is almost always the "expected output" of the function. In order for that to work, the first argument must be passed in by **reference**, or by its pointer, rather than by **value**, which simply copies the information._
+    2. `void testClearBit()`
+       1. `Err setBit(uint32_t* bits, uint8_t n)` $range_{bitNum} = [0,31]$
+    3. `void testMaskBit()`
+       1. `Err maskBit(uint8_t* masked_bit, uint32_t data, uint8_t n)`
+
+_Make sure to commit after each test passes!_
+
 ### Turn it in
 
-1. Publish the branch to the remote repository, then make a pull request
+1. Publish the repository to _**Add Remote Repository here!**_, then make a pull request
 2. Merge the pull request. Your UID in the repo will be used to test and grade your submissions
 3. You can verify your grade in the lab based on the tests passed and failed
    1. _Add instructions to see the test results_
