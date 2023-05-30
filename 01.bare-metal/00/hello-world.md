@@ -87,7 +87,7 @@ _I believe the entire prelab should be in an automatically-graded quiz._
 
 #### Optional - Open a new PlatformIO Project
 
-*Throughout the semester, you will create one PlatformIO Project and steadily build upon it until you've created and tested your own library. Because of that, you won't need to create a new project, but it is nice to know how.*
+_Throughout the semester, you will create one PlatformIO Project and steadily build upon it until you've created and tested your own library. Because of that, you won't need to create a new project, but it is nice to know how._
 
 1. Open a new PlatformIO Project:
    1. Create a new VS Code window (Leave the Example Project open; we'll be using that)
