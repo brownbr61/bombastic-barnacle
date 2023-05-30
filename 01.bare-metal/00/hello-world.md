@@ -82,7 +82,7 @@ _I believe the entire prelab should be in an automatically-graded quiz._
    5. Select _(5) Install_ \
    ![Platformio Home image missing](pics/platformio-platforms.png)
 5. Install and configure a linter to help you navigate & understand the c code
-   1. Install the _Microsoft C/C++_ extension and follow one of the tutorials under **C/C++ extension tutorials per compiler and platform** (I used [GCC and Mingw-w64 on Windows](https://code.visualstudio.com/docs/cpp/config-mingw))_
+   1. Install the _Microsoft C/C++_ extension and follow one of the tutorials under **C/C++ extension tutorials per compiler and platform** _(I used [GCC and Mingw-w64 on Windows](https://code.visualstudio.com/docs/cpp/config-mingw))_
 
 
 #### Optional - Open a new PlatformIO Project
